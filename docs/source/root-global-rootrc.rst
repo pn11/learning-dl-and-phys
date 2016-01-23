@@ -1,18 +1,20 @@
 ==================================================
-個人設定したい（ :file:`.rootrc` ）
+個人設定したい
 ==================================================
 
 bashの個人設定を :file:`~/.bashrc` に書くように、ROOTの個人設定は :file:`~/.rootrc` に書きます。
-デフォルト値は :file:`{ROOTをインストールしたパス}/etc/system.rootrc` に書かれているので、これをホームディレクトリにコピーして編集すればOKです。
+デフォルト値は :file:`$ROOTSYS/etc/system.rootrc` に書かれているので、
+これをホームディレクトリにコピーして編集すればOKです。
 
-.. code:: bash
+.. code-block:: console
 
     $ locate system.root
     ## =>  $ROOTSYS/etc/system.rootrc
     $ cp $ROOTSYS/etc/system.rootrc ~/.rootrc
 
 
-ディレクトリ毎の設定（ :file:`rootlogon.C` ）
+ディレクトリ毎の設定
 ==================================================
 
-ディレクトリ（やプロジェクト）毎の設定はROOTマクロを起動するディレクトリ直下の :file:`rootlogon.C` に書きます。
+ディレクトリ（やプロジェクト）毎の設定は
+ROOTマクロを起動するディレクトリ直下の :file:`rootlogon.C` に書きます。
