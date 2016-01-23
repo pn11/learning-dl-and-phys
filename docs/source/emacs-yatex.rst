@@ -1,19 +1,66 @@
 ==================================================
-YaTeXの使い方
+YaTeX
 ==================================================
 
-YaTeX（野鳥）はEmacsでLaTeX文書を作成するためのパッケージです。
-ちょっと前までは ``Mercurial`` を使って手動でインストールするしかなかったのですが、最近は ``MELPA`` からインストールすることができます。
+EmacsでLaTeX文書を作成するためのパッケージです。
+「やてふ・野鳥」と読みます。
 
-インストール（MELPA）
+
+設定
 ==================================================
 
-.. code:: emacs
 
-    M-x package-install RET yatex RET
+.. code-block:: elisp
 
-インストール（Mercurial）
+   (use-package yatex
+       :ensure t
+       :mode (("\\.tex$" . yatex-mode))
+       :bind (("C-c C-t" . YaTeX-typeset-menu))
+       :config
+       ;; automatically selected according to current language
+       ;; (setq YaTeX-japan t)
+
+       ;; change default kanji-code from 2:JIS to 4:UTF-8
+       ;; (setq latex-message-kanji-code 4)
+       ;; (setq YaTeX-kanji-code 4)
+       ;; (setq YaTeX-coding-system 4)
+
+       ;; declared in yatexlib.el
+       (setq YaTeX-inhibit-prefix-letter t)
+       ;; local dictionary is NOT needed
+       (setq YaTeX-nervous nil)
+
+       ;; declared in yatex.el
+       (setq tex-command "ptex2pdf -l -ot -synctex=1 -file-line-error")
+       (setq bibtex-command "pbibtex")
+       (setq dvi2-command "open -a Preview")    ;; use Preview.app
+       (setq tex-pdfview-command "open -a Preview")
+       (setq dviprint-command-format "dvipdfmx %s")
+       (setq YaTeX-skip-default-reader t)
+       (setq YaTeX-simple-messages t)
+       ;; (setq YaTeX-template-file "...")
+       )
+
+
+
+使い方
 ==================================================
+
+#. TeXファイル（ ``yatex-mode`` ）を開いて :kbd:`C-c C-t` を押す
+#. 次のアクション一覧からキーを選択（ :kbd:`j` : コンパイル、:kbd:`p` : プレビュー、など）
+
+コンパイルに使うコマンドは 変数 ``tex-command`` 、
+プレビューに使うコマンドは 変数 ``tex-pdfview-command`` で設定（ ``setq`` ）している
+
+
+
+手動インストール
+==================================================
+
+最近は ``MELPA`` からインストールすることができますが、
+ちょっと前までは ``Mercurial`` を使って手動でインストールする必要がありました。
+その方法も一応書いておきます。
+
 
 :STEP1: Mercurialのインストール
 
@@ -90,63 +137,3 @@ YaTeX（野鳥）はEmacsでLaTeX文書を作成するためのパッケージ�
     $ make install
     $ make install-info
     $ make install-yahtml
-
-
-
-設定
-==================================================
-
-
-.. code-block:: elisp
-
-   (use-package yatex
-       :ensure t
-       :mode (("\\.tex$" . yatex-mode))
-       :bind (("C-c C-t" . YaTeX-typeset-menu))
-       :config
-       ;; automatically selected according to current language
-       ;; (setq YaTeX-japan t)
-
-       ;; change default kanji-code from 2:JIS to 4:UTF-8
-       ;; (setq latex-message-kanji-code 4)
-       ;; (setq YaTeX-kanji-code 4)
-       ;; (setq YaTeX-coding-system 4)
-
-       ;; declared in yatexlib.el
-       (setq YaTeX-inhibit-prefix-letter t)
-       ;; local dictionary is NOT needed
-       (setq YaTeX-nervous nil)
-
-       ;; declared in yatex.el
-       (setq tex-command "ptex2pdf -l -ot -synctex=1 -file-line-error")
-       (setq bibtex-command "pbibtex")
-       (setq dvi2-command "open -a Preview")    ;; use Preview.app
-       (setq tex-pdfview-command "open -a Preview")
-       (setq dviprint-command-format "dvipdfmx %s")
-       (setq YaTeX-skip-default-reader t)
-       (setq YaTeX-simple-messages t)
-       ;; (setq YaTeX-template-file "...")
-       )
-
-拡張子が.texのファイルをyatex-modeで開く
---------------------------------------------------
-
-.. code-block:: elisp
-
-   :mode (("\\.tex$" . yatex-mode))
-
-
-ローカル辞書は要らない
---------------------------------------------------
-
-.. code-block:: elisp
-
-   (setq YaTeX-nervous nil)
-
-
-LaTeXコンパイラの設定
---------------------------------------------------
-
-.. code-block:: elisp
-
-   (setq tex-command "ptex2pdf -l -ot -synctex=1 -file-line-error")
