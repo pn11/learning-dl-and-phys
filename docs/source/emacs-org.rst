@@ -49,7 +49,7 @@ LaTeXエクスポート時に使うドキュメントクラスを指定する。
 Orgファイル中の ``#+LATEX_CLASS:`` （大文字／小文字の区別なし）で指定できる
 （ない場合はデフォルト値が使われる）。
 
-.. code-block:: emacs-lisp
+.. code-block:: emacs
 
    Original value was
    (("article"    ;; <-- the name of the class
@@ -86,7 +86,7 @@ Orgファイル中の ``#+LATEX_CLASS:`` （大文字／小文字の区別なし
 ``alist`` になっているので、 ``add-to-list`` を使って自分の設定を追加できる。
 ``jsarticle`` など、日本語ドキュメントクラスを追加しておくと良い。
 
-.. code-block:: emacs-lisp
+.. code-block:: emacs
 
    (add-to-list 'org-latex-classes
                 '("jsarticle"
@@ -162,7 +162,7 @@ LaTeXエクスポートした時に、ヘッダに挿入されるパッケージ
 ``hyperref`` はすでにインクルードされてるので ``hypersetup`` で指定する必要がある。
 また、ファイル内の ``#+LATEX_HEADER:`` で個々の設定もできる。
 
-.. code-block:: emacs-lisp
+.. code-block:: emacs
 
    ;; usepackage型
    (add-to-list 'org-latex-packages-alist '("オプション" "パッケージ名") t)
@@ -175,7 +175,7 @@ LaTeXエクスポートした時に、ヘッダに挿入されるパッケージ
 サンプルコード
 ^^^^^^^^^^^^^^
 
-.. code-block:: emacs-lisp
+.. code-block:: emacs
 
    ;; しおりの文字化け対策
    (add-to-list 'org-latex-packages-alist '("" "pxjahyper") t)
@@ -242,7 +242,7 @@ LaTeXエクスポートした時に、ヘッダに挿入されるパッケージ
 
 ``Emacs24.1`` で多少変更されたらしい。
 
-.. code-block:: emacs-lisp
+.. code-block:: emacs
 
    Value:
    (("AUTO" "inputenc" t)
@@ -267,7 +267,7 @@ LaTeXエクスポートした時に、ヘッダに挿入されるパッケージ
 上文字、下文字の自動変換をオフにする
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code-block:: emacs-lisp
+.. code-block:: emacs
 
    (setq org-use-sub-superscripts nil)
    (setq org-export-with-sub-superscripts nil)
@@ -403,7 +403,7 @@ HEADER-STRINGの制御
 org-latex-pdf-processの詳細
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: emacs-lisp
+.. code-block:: emacs
 
     Its value is
       ("pdflatex -interaction nonstopmode -output-directory %o %f"
@@ -426,7 +426,7 @@ pTeXを使ってコンパイルしていたが、これをきちんと設定す�
 org-latex-packages-alistの詳細
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: emacs-lisp
+.. code-block:: emacs
 
    A cell is of the format: ("options" "package" SNIPPET-FLAG)
 
@@ -464,7 +464,7 @@ be appended.
 ^^^^^^^^^^^^
 
 
-.. code-block:: emacs-lisp
+.. code-block:: emacs
 
    "\\\\documentclass{article}\\n
    \\\\usepackage[usenames]{color}\\n [PACKAGES]\\n [DEFAULT-PACKAGES]\\n
@@ -551,7 +551,7 @@ LaTeXファイルを開き、ドキュメントクラスのオプションでド
 org-latex-pdf-process を pTeXに変更する
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code-block:: emacs-lisp
+.. code-block:: emacs
 
    (use-package ox-latex
    :config
@@ -581,7 +581,7 @@ org-latex-pdf-process を pTeXに変更する
 文字サイズは少し大きく（＝ ``12pt`` ）して、ドライバには ``dvipdfmx`` を指定する。
 sectioning については、article のデフォルトを使う。
 
-.. code-block:: emacs-lisp
+.. code-block:: emacs
 
    (add-to-list 'org-latex-classes
                 '("jsarticle"
@@ -607,7 +607,7 @@ sectioning については、article のデフォルトを使う。
 文字サイズは少し大きく（＝12pt）して、ドライバには dvipdfmx を指定する。
 sectioning については、book のデフォルトを使う。
 
-.. code-block:: emacs-lisp
+.. code-block:: emacs
 
    (add-to-list 'org-latex-classes
                 '("jsbook"
@@ -632,7 +632,7 @@ sectioning については、book のデフォルトを使う。
 オプションをつければいいらしい。 sectioning については、article
 のデフォルトを部分に chapter を付け加えた。
 
-.. code-block:: emacs-lisp
+.. code-block:: emacs
 
    (add-to-list 'org-latex-classes
                 '("jsreport"
@@ -651,7 +651,7 @@ sectioning については、book のデフォルトを使う。
 すべてのOrgファイルに
 ``#+latex_class: jsarticle`` を付けるのはめんどくさいので デフォルトに設定する。
 
-.. code-block:: emacs-lisp
+.. code-block:: emacs
 
    (setq org-latex-default-class "jsarticle")
 
@@ -660,7 +660,7 @@ sectioning については、book のデフォルトを使う。
 listingsを使ってコードブロックの装飾する
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code-block:: emacs-lisp
+.. code-block:: emacs
 
    (setq org-latex-listings t)
    (add-to-list 'org-latex-packages-alist '("" "listings"))
@@ -671,7 +671,7 @@ listingsを使ってコードブロックの装飾する
 listlingsパッケージの初期設定はlstsetを使う。hypersetupのときと同じ
 ように、Orgファイルの先頭に書いておく。
 
-.. code-block:: emacs-lisp
+.. code-block:: emacs
 
     #+latex_header: \lstset{language=[LaTeX]TeX}
     #+latex_header: \lstset{basicstyle=\small}
@@ -693,7 +693,7 @@ LaTeXエクスポートの設定のテスト [1]_のために、必要なemacs�
 Org文書中に記述できるソースコードのブロックは、なんと内容を実行する
 機能がついています。なので、テストの際はそれを使うと格段に捗ります。あるので、それを使うと
 
-#+begin\ :sub:`src` emacs-lisp /#+BEGIN:sub:`SRC` emacs-lisp :exports
+#+begin\ :sub:`src` emacs /#+BEGIN:sub:`SRC` emacs :exports
 results :results silent (setq org-latex-listings t) (add-to-list
 'org-latex-packages-alist '("" "listings")) (add-to-list
 'org-latex-packages-alist '("" "color")) /#+END:sub:`SRC`
