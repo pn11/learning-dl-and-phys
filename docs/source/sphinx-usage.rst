@@ -29,5 +29,5 @@ Sphinxを導入しておけば書くのも、HTML／PDFなどでの共有も楽�
    sphinx-quickstart
    sphinx-build
    sphinx-conf
-   sphinx-readthedocs
    sphinx-pandoc
+   sphinx-readthedocs
