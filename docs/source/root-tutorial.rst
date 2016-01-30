@@ -14,7 +14,8 @@
    root-tutorial-rootrc
    root-tutorial-calculator
    root-tutorial-demos
-   root-tutorial-hsimple
+   ..
+      root-tutorial-hsimple
 
 .. todo::
 
