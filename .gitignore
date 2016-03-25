@@ -114,5 +114,6 @@ sympy-plots-for-*.tex/
 
 # --- Add by Shota T. --- #
 source/tutorials/
-build/
+build
 tutorials/
+.DS_Store
