@@ -24,6 +24,7 @@ Emacsの簡単な使い方と便利なパッケージなどを紹介します。
    emacs-org
    emacs-yatex
    emacs-magit
+   emacs-yasnippet
    emacs-twitter
    emacs-vim
 
@@ -31,7 +32,7 @@ Emacsの簡単な使い方と便利なパッケージなどを紹介します。
 関連ドキュメント
 ==================================================
 
-* `Emacs For MacOS X <http://emacsformacosx.com>`__
+* `Emacs or MacOS X <http://emacsformacosx.com>`__
 * `るびきち「日刊Emacs」 <http://rubikitch.com>`__
 * `Prelude <http://batsov.com/prelude/>`__
 * `Org-mode for Emacs <http://orgmode.org>`__
