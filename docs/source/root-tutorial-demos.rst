@@ -1,5 +1,5 @@
 ==================================================
-デモの実行（ :command:`.x demos.C` ）
+デモの実行
 ==================================================
 
 .. code-block:: bash
@@ -18,7 +18,6 @@ CINTで実行する場合は :command:`.x demos.C` と入力します。
    :align: center
 
    CINT内で :command:`.x demos.C` を実行した時の画面
-
 
 
 この ``Demos ツールバー`` の一番上の ``Help Demos`` ボタンをクリックすると :numref:`fig-root-helpdemos` のようなキャンバスが表示されます。
