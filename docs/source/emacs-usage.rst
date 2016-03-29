@@ -24,6 +24,7 @@ Emacsの簡単な使い方と便利なパッケージなどを紹介します。
    emacs-org
    emacs-yatex
    emacs-magit
+   emacs-projectile
    emacs-yasnippet
    emacs-twitter
    emacs-vim
