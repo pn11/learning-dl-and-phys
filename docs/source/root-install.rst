@@ -8,6 +8,7 @@
 .. toctree::
 
    root-install-macports
+   root-install-homebrew
 .. root-install-git
 .. root-install-old
 
