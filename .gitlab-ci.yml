@@ -1,0 +1,22 @@
+image: chezou/sphinx-recommonmark:latest
+before_script:
+  - pip --version
+  - pip install --upgrade pip setuptools wheel
+  - pip --version
+  - pip install -U Sphinx
+  - pip install -U sphinx_rtd_theme
+  - pip install -U sphinx_materialdesign_theme
+  - pip list --format=columns
+pages:
+  script:
+  - cd docs
+  - make html
+  - make latexpdf
+  - ls -ltr build/latex/
+  - mv build/html/ public/
+  - mv build/latex public/
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
