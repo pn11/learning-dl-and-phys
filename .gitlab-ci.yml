@@ -13,8 +13,8 @@ pages:
   - make html
   - make latexpdf
   - ls -ltr build/latex/
-  - mv build/html/ public/
-  - mv build/latex public/
+  - mv build/html/ ../public/
+  - mv build/latex ../public/
   artifacts:
     paths:
     - public
