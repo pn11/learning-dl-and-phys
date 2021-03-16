@@ -1,8 +1,8 @@
 [tool.poetry]
-name = "kumaroot"
-version = "0.3.0"
-description = "KumaROOT"
-authors = ["Shota Takahashi (KEK) <shotakah@post.kek.jp>"]
+name = "learning-dl-and-phys"
+version = "0.0.0"
+description = "Learning Deep Learning and Physics."
+authors = ["pn11"]
 license = "MIT"
 
 [tool.poetry.dependencies]

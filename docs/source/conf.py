@@ -20,11 +20,11 @@ import sphinx_rtd_theme
 ## Project information
 ##################################################
 
-project = 'KumaROOT'
-author = 'Shota TAKAHASHI'
-copyright = '2015, Shota TAKAHASHI'
-version = '0.3.0'
-release = '0.3.0'
+project = 'learning-dl-and-phys'
+author = 'pn11'
+copyright = '2021, pn11'
+version = '0.0.0'
+release = '0.0.0'
 
 ##################################################
 ## General configuration
