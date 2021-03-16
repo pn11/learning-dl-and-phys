@@ -113,44 +113,6 @@ html_search_language = 'ja'
 #html_search_scorer = 'scorer.js'
 htmlhelp_basename = 'KumaROOTdoc'
 
-##################################################
-## Options for LaTeX output
-##################################################
-
-#latex_engine = 'uplatex'
-latex_documents = [(
-    master_doc,
-    'KumaROOT.tex',
-    'KumaROOT',
-    'Shota TAKAHASHI',
-    'manual'),
-]
-latex_docclass = {'manual' : 'jsbook'}
-
-latex_elements = {
-    'papersize' : 'a4paper',
-    'pointsize': '12pt',
-    'preamble': '',
-    'figure_align': 'htbp',
-}
-
-latex_elements['preamble'] += '\\usepackage{pxjahyper}\n'
-latex_elements['preamble'] += '\\usepackage{graphics}\n'
-latex_elements['preamble'] += '\\hypersetup{bookmarksnumbered=true}\n'
-latex_elements['preamble'] += '\\hypersetup{bookmarksopen=true}\n'
-latex_elements['preamble'] += '\\hypersetup{bookmarksopenlevel=2}\n'
-latex_elements['preamble'] += '\\hypersetup{colorlinks=true}\n'
-latex_elements['preamble'] += '\\hypersetup{pdfpagemode=UseOutlines}\n'
-
-# latex_elements['preamble'] += '\\renewcommand{\\familydefault}{\\sfdefault}\n'
-# latex_elements['preamble'] += '\\renewcommand{\\kanjifamilydefault}{\\gtdefault}\n'
-latex_logo = './images/toumin_kuma.png'
-#latex_use_parts = False
-#latex_show_pagerefs = False
-#latex_show_urls = False
-#latex_appendices = []
-#latex_domain_indices = True
-
 #################################################
 ## Options for Epub output
 ##################################################
